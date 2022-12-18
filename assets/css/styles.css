@@ -14,8 +14,7 @@ body {
   top: 1rem;
   left: 1rem;
   z-index: 2;
-  color: #fff;
-  text-shadow: 2px 2px;
+  color: green;
 }
 
 .gd-modal-loaded .logo {
@@ -24,5 +23,5 @@ body {
 
 .logo:hover {
   cursor: pointer;
-  color: #ffe0c9;
+  color: orange;
 }
