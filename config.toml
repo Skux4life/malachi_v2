@@ -1,5 +1,5 @@
-baseURL      = "https://www.example.com/"
-title        = "Gallery Deluxe"
+baseURL      = "https://malachi.com"
+title        = "Malachi"
 disableKinds = ["section", "taxonomy", "term"]
 
 [params]
