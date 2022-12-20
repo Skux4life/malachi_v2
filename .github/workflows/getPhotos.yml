@@ -16,6 +16,8 @@ jobs:
           
       - name: Checkout main
         uses: actions/checkout@v3
+        with:
+          path: main
 
       - name: Set-up Go
         uses: actions/setup-go@v3
