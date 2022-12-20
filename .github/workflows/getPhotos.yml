@@ -18,6 +18,8 @@ jobs:
           repository: Skux4life/getPhotos
           token: ${{ secrets.PAT }}
           path: functions
+      - name: check
+        run: ls main
       - name: Set-up Go
         uses: actions/setup-go@v3
         with:
