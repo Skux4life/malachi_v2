@@ -26,7 +26,7 @@ jobs:
           go-version: '1.19.4' # The Go version to download (if necessary) and use.
       - name: run
         run: go run functions/getPhotos.go
-      - name: cd
-        run: cd main
+      - name: workaround
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
