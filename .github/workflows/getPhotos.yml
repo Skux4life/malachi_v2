@@ -7,29 +7,29 @@ jobs:
   get-photos:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          path: main
-
       - name: Checkout private repo
         uses: actions/checkout@v3
         with:
           repository: Skux4life/getPhotos
           token: ${{ secrets.PAT }}
           path: functions
-      - name: check
-        run: ls main
+          
+      - name: Checkout main
+        uses: actions/checkout@v3
+        with:
+          path: main
+
       - name: Set-up Go
         uses: actions/setup-go@v3
         with:
           go-version: '1.19.4' # The Go version to download (if necessary) and use.
       - name: run
         run: go run functions/getPhotos.go
-        
-  create-pr:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Create pull request
+      - name: create pr
         uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: update images
+          title: Update Images
+          body: Add new images
+          branch: update-images
+          base: main
