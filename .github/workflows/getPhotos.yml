@@ -18,10 +18,9 @@ jobs:
           repository: Skux4life/getPhotos
           token: ${{ secrets.PAT }}
           path: functions
-  goSetup:
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
+      - name: Set-up Go
+        uses: actions/setup-go@v3
         with:
           go-version: '1.19.4' # The Go version to download (if necessary) and use.
-      - run: go run functions/getPhotos.go
+      - name: run
+        run: go run functions/getPhotos.go
