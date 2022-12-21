@@ -28,6 +28,7 @@ jobs:
         
       - name: set up git config
         run: |
+          cd main
           git config user.name "Skux4life bot"
           git config user.email "mattellis1234@gmail.com"
           
