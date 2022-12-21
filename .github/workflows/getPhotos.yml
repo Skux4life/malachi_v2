@@ -26,11 +26,15 @@ jobs:
       - name: run
         run: go run functions/getPhotos.go
         
-      - name: create pr
-        uses: peter-evans/create-pull-request@v4
-        with:
-          commit-message: update images
-          title: Update Images
-          body: Add new images
-          branch: update-images
-          base: main
+      - name: set up git config
+        run: |
+          git config user.name "Skux4life bot"
+          git config user.email "mattellis1234@gmail.com"
+          
+      - name: commit changes and create PR
+        run: |
+          git status
+          git add -A
+          git commit -m "add new photos"
+          git status
+          git push origin main
