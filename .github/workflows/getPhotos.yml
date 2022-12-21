@@ -2,7 +2,7 @@ name: Get images from google photos
 
 on:  
   schedule:
-    - cron: '01 7 * * *'
+    - cron: '25 7 * * *'
   workflow_dispatch:
   
 jobs:
@@ -28,19 +28,17 @@ jobs:
       - name: run
         run: go run functions/getPhotos.go
         
-      - name: set up git config
-        run: |
-          cd main
-          git config user.name "Skux4life bot"
-          git config user.email "mattellis1234@gmail.com"
-          
       - name: commit changes and create PR
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         run: |
           cd main
+          git config user.name "Skux4life bot"
+          git config user.email "mattellis1234@gmail.com"
           git status
           git add -A
           git commit -m "add new photos"
           git status
           git push origin main
+        
+          
