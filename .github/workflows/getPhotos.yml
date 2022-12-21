@@ -29,12 +29,12 @@ jobs:
       - name: set up git config
         run: |
           cd main
-          git init
           git config user.name "Skux4life bot"
           git config user.email "mattellis1234@gmail.com"
           
       - name: commit changes and create PR
         run: |
+          cd main
           git status
           git add -A
           git commit -m "add new photos"
