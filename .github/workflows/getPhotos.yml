@@ -1,7 +1,9 @@
 name: Get images from google photos
 
-on:
-  workflow_dispatch
+on:  
+  schedule:
+    - cron: '15 4 * * *'
+  workflow_dispatch:
   
 jobs:
   get-photos:
