@@ -2,18 +2,20 @@ name: Get images from google photos
 
 on:  
   schedule:
-    - cron: '30 4 * * *'
+    - cron: '05 5 * * *'
   workflow_dispatch:
   
 jobs:
   get-photos:
     runs-on: ubuntu-latest
     steps:
+      - env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
       - name: Checkout private repo
         uses: actions/checkout@v3
         with:
           repository: Skux4life/getPhotos
-          token: ${{ secrets.PAT }}
+          token: $GITHUB_TOKEN
           path: functions
           
       - name: Checkout main
