@@ -29,8 +29,7 @@ jobs:
       - name: run
         run: |
           cd main 
-          ls -a
-          go run functions/getPhotos.go
+          go run ../functions/getPhotos.go
         
       - name: commit changes and create PR
         env:
